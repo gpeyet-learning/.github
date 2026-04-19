@@ -168,8 +168,8 @@ jobs:
       - name: Write default linter configs
         run: |
           mkdir -p .github/linters
-          if [[ ! -f .github/linters/zizmor.yaml ]]; then
-            cat > .github/linters/zizmor.yaml << 'EOF'
+
+          cat > .github/linters/zizmor.yaml << 'EOF'
           rules:
             unpinned-uses:
               config:
@@ -179,13 +179,11 @@ jobs:
                   github/*: ref-pin
                   gpeyet-learning/*: any
           EOF
-          fi
-          if [[ ! -f .github/linters/.codespellrc ]]; then
-            cat > .github/linters/.codespellrc << 'EOF'
+
+          cat > .github/linters/.codespellrc << 'EOF'
           [codespell]
           skip = */content/*,*/public/*,*/themes/*,*/resources/*
           EOF
-          fi
 
       - name: Download html
         uses: actions/download-artifact@v8.0.1
@@ -203,6 +201,8 @@ jobs:
           VALIDATE_BIOME_FORMAT: false
           # Content is in French — English terminology rules produce false positives
           VALIDATE_NATURAL_LANGUAGE: false
+          # Content is in French — codespell produces false positives
+          VALIDATE_SPELL_CODESPELL: false
 
   codeql:
     name: CodeQL Analysis
