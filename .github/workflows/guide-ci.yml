@@ -203,6 +203,8 @@ jobs:
           VALIDATE_BIOME_FORMAT: false
           # Content is in French — English terminology rules produce false positives
           VALIDATE_NATURAL_LANGUAGE: false
+          # Content is in French — codespell produces false positives
+          VALIDATE_SPELL_CODESPELL: false
 
   codeql:
     name: CodeQL Analysis
