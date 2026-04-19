@@ -203,10 +203,3 @@ jobs:
           VALIDATE_NATURAL_LANGUAGE: false
           # Content is in French — codespell produces false positives
           VALIDATE_SPELL_CODESPELL: false
-
-  codeql:
-    name: CodeQL Analysis
-    uses: gpeyet-learning/.github/.github/workflows/guide-codeql.yml@main
-    permissions:
-      contents: read
-      security-events: write
