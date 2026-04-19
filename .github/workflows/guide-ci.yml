@@ -175,6 +175,8 @@ jobs:
               config:
                 policies:
                   actions/*: ref-pin
+                  docker/*: ref-pin
+                  gpeyet-learning/*: any
           EOF
           fi
           if [[ ! -f .github/linters/.codespellrc ]]; then
