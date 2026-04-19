@@ -199,6 +199,7 @@ jobs:
           VALIDATE_GO_MODULES: false
           # Prettier is the single formatter — Biome would conflict
           VALIDATE_BIOME_FORMAT: false
+          VALIDATE_BIOME_LINT: false
           # Content is in French — English terminology rules produce false positives
           VALIDATE_NATURAL_LANGUAGE: false
           # Content is in French — codespell produces false positives
